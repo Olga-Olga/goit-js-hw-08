@@ -18,7 +18,9 @@
     "url": "https://github.com/Olga-Olga/goit-js-hw-08/issues"
   },
   "dependencies": {
+    "@parcel/reporter-cli": "^2.9.3",
     "@vimeo/player": "^2.20.1",
+    "loadash": "^1.0.0",
     "modern-normalize": "^1.1.0",
     "simplelightbox": "^2.14.1"
   },
