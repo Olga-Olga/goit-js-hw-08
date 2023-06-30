@@ -1,8 +1,4 @@
-// import SimpleLightbox from "../../node_modules/simplelightbox/dist/simple-lightbox.esm"
-// import SimpleLightbox from "simplelightbox";
-// Описаний в документації
 import SimpleLightbox from "simplelightbox";
-// Додатковий імпорт стилів
 import "simplelightbox/dist/simple-lightbox.min.css";
 
 import { galleryItems } from './gallery-items.js';
