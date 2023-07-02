@@ -6,8 +6,8 @@ const formElements = document.querySelector(".feedback-form")
 // console.dir(formElements.elements.email);
 // console.dir(formElements.elements.message);
 
-
-const storageObj = JSON.parse(localStorage.getItem("feedback-form-state")) ? JSON.parse(localStorage.getItem("feedback-form-state")) : {}
+//const storageObj = JSON.parse(localStorage.getItem("feedback-form-state")) ? JSON.parse(localStorage.getItem("feedback-form-state")) : {}
+const storageObj = JSON.parse(localStorage.getItem("feedback-form-state")) || {}
 console.log("Что в сторедже?", storageObj);
 
 console.log(Boolean(storageObj));
@@ -45,7 +45,11 @@ function callbackStorageHandler(event) {
 formElements.addEventListener("submit", event => {
     event.preventDefault()
     console.log("сабмит?");
-    localStorage.setItem("feedback-form-state", "")
+    for (const key in storageObj) {
+        storageObj[key] = ""
+    }
+    console.log(storageObj);
+    localStorage.setItem("feedback-form-state", JSON.stringify(storageObj))
     formElements.reset()
 }
 )
