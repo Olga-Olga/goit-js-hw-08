@@ -22,11 +22,8 @@ function populetedText() {
         for (const key in storageObj) {
             console.log("KEY в цикле обёекта, что распарсили из стореджа: ", key);
             console.log("Значение ключа storageObj[key]: ", storageObj[key]);          
-            // console.log("Tекст формы перед пересыванием: ", formElements.elements[key].textContent);
             console.log("Валью формы перед пересыванием: ", formElements.elements[key].value); 
             formElements.elements[key].value = storageObj[key]
-           // formElements.elements[key].textContent = storageObj[key]
-        //   console.log("текст формы Текст конетент после пересывания", formElements.elements[key].textContent);
           console.log("текст формы Валью после пересывания", formElements.elements[key].value);
            }
   //  }
@@ -46,12 +43,14 @@ function callbackStorageHandler(event) {
 formElements.addEventListener("submit", event => {
     event.preventDefault()
     console.log("сабмит?");
-    for (const key in storageObj) {
-        storageObj[key] = ""
-    }
-    console.log(storageObj);
-    localStorage.setItem(TAK_PONIATNEE, JSON.stringify(storageObj))
-    formElements.reset()
+    // for (const key in storageObj) {
+    //     storageObj[key] = ""
+    // }
+    // console.log(storageObj);
+    // localStorage.setItem(TAK_PONIATNEE, JSON.stringify(storageObj))
+    
+    localStorage.removeItem(TAK_PONIATNEE);
+    event.currentTarget.reset()
 }
 )
 
