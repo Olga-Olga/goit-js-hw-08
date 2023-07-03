@@ -42,13 +42,7 @@ function callbackStorageHandler(event) {
 
 formElements.addEventListener("submit", event => {
     event.preventDefault()
-    console.log("сабмит?");
-    // for (const key in storageObj) {
-    //     storageObj[key] = ""
-    // }
-    // console.log(storageObj);
-    // localStorage.setItem(TAK_PONIATNEE, JSON.stringify(storageObj))
-    
+    console.log("сабмит", storageObj);
     localStorage.removeItem(TAK_PONIATNEE);
     event.currentTarget.reset()
 }
